@@ -118,11 +118,11 @@ router.put('/:id', (req, res) => {
 router.delete('/:id', async (req, res) => {
   // delete one product by its `id` value
   try {
-    sequelize.literal(`(DELETE FROM product_tag WHERE product_id = ${req.params.id})`);
     const product = await Product.destroy({
       where: {
         id: req.params.id,
       },
+      include: [{model: ProductTag}],
     });
 
     if (!product) {
