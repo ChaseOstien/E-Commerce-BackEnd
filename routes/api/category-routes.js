@@ -45,7 +45,7 @@ router.post('/', async (req, res) => {
   } catch (err) {
     res.status(400).json(err);
   }
-});
+});  
 
 router.put('/:id', (req, res) => {
   // update a category by its `id` value
@@ -54,7 +54,7 @@ router.put('/:id', (req, res) => {
       .then(updatedCategory => {
         res.json(updatedCategory);
       }).catch(err => res.json(err));
-  });
+  }); // Updates the category with the specified ID
 
 router.delete('/:id', async (req, res) => {
   // delete a category by its `id` value
@@ -63,7 +63,7 @@ router.delete('/:id', async (req, res) => {
       where: {
         id: req.params.id,
       },
-    });
+    }); // Deletes the category with the specified ID.
 
     if(!category) {
       res.status(404).json({ message: 'No category found with that id!' });

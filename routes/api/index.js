@@ -8,3 +8,4 @@ router.use('/products', productRoutes);
 router.use('/tags', tagRoutes);
 
 module.exports = router;
+// This file imports all of the written routes and assigns them to the router variable. 
