@@ -6,13 +6,13 @@ class ProductTag extends Model {}
 
 ProductTag.init(
   {
-    id: {
+    id: { // ID column
       type: DataTypes.INTEGER,
       allowNull: false,
       primaryKey: true,
       autoIncrement: true,
     },
-    product_id: {
+    product_id: { // ID that references the product ID.
       type: DataTypes.INTEGER,
       onDelete: 'CASCADE',
       references: {
